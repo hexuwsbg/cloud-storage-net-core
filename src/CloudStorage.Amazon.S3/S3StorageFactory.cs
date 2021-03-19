@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CloudStorage.Amazon.S3
+namespace CloudStorage.AmazonS3
 {
     public class S3StorageFactory : StorageFactory
     {

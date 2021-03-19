@@ -3,7 +3,7 @@ using CloudStorage.Interfaces;
 using CloudStorage.Model;
 using System;
 
-namespace CloudStorage.Amazon.S3
+namespace CloudStorage.AmazonS3
 {
     public partial class S3Proxy : IMultipartStorage
     {

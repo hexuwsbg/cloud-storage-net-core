@@ -2,8 +2,10 @@
 using CloudStorage.Model;
 using System;
 using Amazon.S3;
+using System.Threading.Tasks;
+using System.Threading;
 
-namespace CloudStorage.Amazon.S3
+namespace CloudStorage.AmazonS3
 {
     public partial class S3Proxy : IDisposable, IObjectStorage
     {
@@ -11,8 +13,18 @@ namespace CloudStorage.Amazon.S3
 
         public CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            _amazonS3Client.getbucket
-            throw new NotImplementedException();
+            var s3CopyObjectRequest = new Amazon.S3.Model.CopyObjectRequest()
+            {
+                SourceBucket = request.SourceBucket,
+                SourceKey = request.SourceKey,
+                DestinationBucket = request.Bucket,
+                DestinationKey = request.Key,
+            };
+
+
+            var result = _amazonS3Client.CopyObjectAsync(s3CopyObjectRequest).Result;
+
+            return null;
         }
 
         public DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
@@ -21,11 +33,6 @@ namespace CloudStorage.Amazon.S3
         }
 
         public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool DoesBucketExist(string bucket)
         {
             throw new NotImplementedException();
         }

@@ -11,13 +11,6 @@ namespace CloudStorage.Interfaces
     public interface IObjectStorage
     {
         /// <summary>
-        /// bucket是否存在
-        /// </summary>
-        /// <param name="bucket">bucket</param>
-        /// <returns>bool</returns>
-        Task<bool> DoesBucketExistAsync(string bucket);
-
-        /// <summary>
         /// 存储对象
         /// </summary>
         /// <param name="request">request</param>
